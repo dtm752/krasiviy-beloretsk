@@ -1,1 +1,1789 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Красивый Белорецк — туры по Южному Уралу</title>
+  <meta name="description" content="Турклуб «Красивый Белорецк»: безопасные походы и авторские маршруты по Белорецкому району и Южному Уралу. Настоящие горы, тёплые люди и впечатления, которые остаются.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
 
+  <!-- Простая SVG-иконка как data URL -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="16" fill="%23F5F1E9"/%3E%3Cpath d="M10 46L26 22L38 36L46 26L54 46Z" fill="none" stroke="%23123830" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3E%3Ccircle cx="44" cy="16" r="5" fill="none" stroke="%23EBA63C" stroke-width="3"/%3E%3C/svg%3E'>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph (можете поменять URL под свой домен) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Красивый Белорецк — туры по Южному Уралу">
+  <meta property="og:description" content="Настоящие горы. Тёплые люди. Впечатления, которые остаются.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/og-image.svg">
+
+  <!-- JSON-LD (минимальный набор; обновите URL под продакшн) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://example.com/#org",
+        "name": "Красивый Белорецк",
+        "description": "Туристический клуб. Походы и авторские маршруты по Белорецкому району и Южному Уралу.",
+        "url": "https://example.com/",
+        "areaServed": "RU-BA",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Белорецк",
+          "addressRegion": "Республика Башкортостан",
+          "addressCountry": "RU"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+  :root {
+    --pine:#123830;--pine-deep:#0E2B26;--cream:#F5F1E9;--paper:#FFFFFF;
+    --ink:#21302B;--muted:#6C7A72;--line:#E4E0D6;
+    --sun:#EBA63C;--sun-deep:#C9861F;
+    --badge-hit:#2F7D4F;--badge-newbie:#3E7CB8;--badge-fest:#7A4E9E;--badge-gastro:#D97E2B;
+    --icon-bg:#F6E8D2;--icon-stroke:#1E4A3C;
+    --radius-pill:999px;--radius-card:18px;
+    --shadow-soft:0 8px 24px rgba(0,0,0,0.06);
+    --header-height:72px;
+    --font-body:"Golos Text",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --font-accent:"Caveat",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    scroll-behavior:smooth;font-size:16px;
+  }
+  @media (prefers-reduced-motion:reduce){
+    :root{scroll-behavior:auto}
+    *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.5;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit}
+  .container{width:100%;max-width:1160px;padding:0 16px;margin:0 auto}
+  .section-title{font-weight:700;font-size:1.6rem;margin:0 0 .8rem;color:var(--pine)}
+  .skip-link{position:absolute;left:-999px;top:8px;padding:8px 16px;background:var(--sun);color:var(--pine-deep);border-radius:4px;z-index:10000}
+  .skip-link:focus{left:8px}
+  :focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+  /* Header */
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(245,241,233,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-height);gap:16px}
+  .logo-wrap{display:flex;align-items:center;gap:8px}
+  .logo-svg svg{height:40px;width:auto}
+  .main-nav{display:none}
+  .main-nav__list{display:flex;list-style:none;padding:0;margin:0;gap:16px;align-items:center}
+  .nav-link{font-size:.9rem;padding:6px 10px;border-radius:999px;color:var(--muted);border:1px solid transparent;background:transparent;display:inline-flex;align-items:center;gap:4px}
+  .nav-link:hover{color:var(--pine);background:rgba(255,255,255,.8)}
+  .nav-link--dropdown{border:none;cursor:pointer}
+  .nav-caret{border-width:4px 4px 0;border-style:solid;border-color:var(--muted) transparent transparent;margin-left:4px;display:inline-block}
+  .main-nav__item--dropdown{position:relative}
+  .dropdown{position:absolute;top:120%;left:0;min-width:190px;background:var(--paper);border-radius:14px;box-shadow:var(--shadow-soft);list-style:none;padding:8px 0;margin:0;display:none;z-index:30}
+  .dropdown__link{display:block;padding:8px 14px;font-size:.9rem;color:var(--ink)}
+  .dropdown__link:hover{background:var(--cream)}
+  .header-contacts{display:flex;align-items:center;gap:12px;margin-left:auto}
+  .header-messengers{display:flex;align-items:center;gap:6px}
+  .messenger-icon-link{width:30px;height:30px;border-radius:999px;background:#F6E8D2;display:inline-flex;align-items:center;justify-content:center}
+  .icon--messenger{width:18px;height:18px}
+  .btn-header-cta{display:none}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:.7rem 1.4rem;border-radius:var(--radius-pill);border:1px solid transparent;font-size:.95rem;font-weight:500;cursor:pointer;transition:background-color .18s,color .18s,border-color .18s,box-shadow .18s,transform .12s;white-space:nowrap}
+  .btn-primary{background:var(--sun);color:var(--pine-deep)}
+  .btn-primary:hover{background:var(--sun-deep);box-shadow:0 6px 16px rgba(203,134,31,.35);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--pine);border-color:var(--pine)}
+  .btn-outline:hover{background:var(--pine);color:var(--cream)}
+  .btn-secondary-dark{background:var(--pine);color:var(--cream)}
+  .btn-secondary-dark:hover{background:var(--pine-deep)}
+  .menu-toggle{width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--paper);display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0}
+  .menu-toggle__line{width:60%;height:2px;border-radius:999px;background:var(--pine)}
+  /* Hero */
+  .hero{padding:24px 0 40px}
+  .hero__inner{display:flex;flex-direction:column;gap:20px}
+  .hero__content{max-width:460px}
+  .hero__tagline-top{letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;font-weight:600;color:var(--muted);margin:4px 0 8px}
+  .hero__title{font-family:var(--font-accent);font-weight:700;font-size:2.4rem;margin:0 0 8px;color:var(--pine)}
+  .hero__subtitle{margin:0 0 16px;font-size:1.02rem;color:var(--ink)}
+  .hero__descriptor{margin-top:12px;font-size:.9rem;color:var(--muted)}
+  .hero__media{position:relative;border-radius:32px;background:linear-gradient(135deg,#304F47,#0E2B26);padding:18px 16px;color:#fff;box-shadow:var(--shadow-soft)}
+  .hero-photo-placeholder{border-radius:26px;background:rgba(245,241,233,.12);border:1px dashed rgba(228,224,214,.8);padding:20px;min-height:220px;display:flex;align-items:flex-end}
+  .hero-photo-placeholder span{font-size:.95rem;max-width:260px}
+  .hero-bullets{margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .icon-bullet{display:flex;gap:8px;align-items:flex-start}
+  .icon-bullet__icon{flex-shrink:0;width:36px;height:36px;border-radius:999px;background:var(--icon-bg);display:inline-flex;align-items:center;justify-content:center}
+  .icon{width:20px;height:20px;stroke:var(--icon-stroke);fill:none}
+  .icon--small{width:16px;height:16px}
+  .icon-bullet__title{margin:0 0 2px;font-weight:600;font-size:.9rem}
+  .icon-bullet__subtitle{margin:0;font-size:.8rem}
+  .icon-bullet--inline .icon-bullet__subtitle{font-size:.9rem}
+  .hero-note{position:absolute;bottom:18px;right:22px;font-family:var(--font-accent);font-size:1.3rem;display:flex;align-items:center;gap:6px}
+  .hero-note__heart{width:32px;height:24px}
+  .hero-note--gastro{bottom:12px;right:18px}
+  /* Trust */
+  .trust{background:var(--cream);padding:20px 0 12px}
+  .trust__inner{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:12px}
+  .trust-card{background:var(--paper);border-radius:18px;padding:14px 14px 12px;border:1px solid var(--line)}
+  .trust-card__title{font-size:1rem;margin:0 0 4px;color:var(--pine)}
+  .trust-card__text{margin:0;font-size:.87rem;color:var(--muted)}
+  /* Section heading */
+  .section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .section-link{display:inline-flex;align-items:center;gap:4px;background:transparent;border:none;padding:4px 0;font-size:.9rem;color:var(--muted);cursor:pointer}
+  .section-link:hover{color:var(--pine)}
+  /* Tours */
+  .tours{padding:28px 0 32px}
+  .tours-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:16px}
+  .tour-card{background:var(--paper);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;border:1px solid var(--line)}
+  .tour-card__image{position:relative;padding-top:66.66%;background:#DCD2C1}
+  .photo-placeholder{position:absolute;inset:0;background:linear-gradient(135deg,#F5F1E9,#E4D8C5);display:flex;align-items:flex-end;padding:10px 12px}
+  .photo-placeholder span{font-size:.8rem;max-width:220px;color:#5D574C}
+  .photo-placeholder--food span{max-width:260px}
+  .photo-placeholder--direction{position:relative;inset:auto;border-radius:16px;min-height:120px}
+  .badge{position:absolute;top:10px;left:10px;border-radius:999px;padding:4px 10px;font-size:.75rem;font-weight:600;color:#fff}
+  .badge--hit{background:var(--badge-hit)}
+  .badge--newbie{background:var(--badge-newbie)}
+  .badge--fest{background:var(--badge-fest)}
+  .badge--gastro{background:var(--badge-gastro)}
+  .badge--author{right:10px;left:auto;background:rgba(18,56,48,.9)}
+  .tour-card__body{padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px}
+  .tour-card__title{font-size:1rem;margin:0;color:var(--pine)}
+  .tour-card__meta{margin:0;font-size:.85rem;color:var(--muted)}
+  .tour-card__specs{display:flex;flex-direction:column;gap:4px;font-size:.85rem}
+  .tour-spec{display:flex;align-items:center;gap:6px;color:var(--ink)}
+  .tour-card__footer{margin-top:6px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .tour-card__price{font-weight:600;font-size:.98rem}
+  /* Gastro */
+  .gastro{padding:24px 0 28px;background:var(--cream)}
+  .gastro__inner{display:flex;flex-direction:column;gap:18px}
+  .gastro__media{position:relative}
+  .gastro__media .photo-placeholder{position:relative;inset:auto;border-radius:24px;min-height:180px}
+  .gastro__content{background:#F2EBDE;border-radius:24px;padding:18px 18px 16px;border:1px solid var(--line)}
+  .gastro-badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#FDF5E5;padding:4px 10px;font-size:.8rem;color:#7A4E09;margin-bottom:6px}
+  .gastro__text{margin:0 0 12px;font-size:.95rem;color:var(--ink)}
+  .gastro-points{margin-top:12px;display:grid;gap:8px}
+  /* Why */
+  .why{padding:28px 0 24px}
+  .why-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:14px}
+  .why-item{background:var(--paper);border-radius:18px;padding:14px 14px 12px;border:1px solid var(--line);display:flex;gap:10px}
+  .why-item__icon{width:40px;height:40px;border-radius:999px;background:var(--icon-bg);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+  .why-item__title{margin:0 0 4px;font-size:.98rem;color:var(--pine)}
+  .why-item__text{margin:0;font-size:.87rem;color:var(--muted)}
+  /* Directions */
+  .directions{padding:24px 0 28px;background:var(--cream)}
+  .directions-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:14px}
+  .direction-card{background:var(--paper);border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden;display:flex;flex-direction:column}
+  .direction-card__media{padding:10px 10px 0}
+  .direction-card__body{padding:10px 14px 14px}
+  .direction-card__title{margin:0 0 4px;font-size:1rem;color:var(--pine)}
+  .direction-card__text{margin:0 0 8px;font-size:.9rem;color:var(--muted)}
+  .direction-card__link{display:inline-flex;align-items:center;gap:4px;font-size:.9rem;color:var(--pine)}
+  /* Departures */
+  .departures{padding:26px 0 30px}
+  .departures__inner{display:flex;flex-direction:column;gap:18px}
+  .departures__info p{margin:0 0 8px;font-size:.95rem;color:var(--muted)}
+  /* Forms */
+  .form{display:flex;flex-direction:column;gap:10px;border-radius:20px;padding:14px 14px 16px}
+  .form--light{background:var(--paper);border:1px solid var(--line)}
+  .form--dark{background:var(--pine-deep);border:1px solid #254840;color:var(--cream)}
+  .form--dark label,.form--dark .form__alt span,.form--dark .form__alt-links span{color:var(--cream)}
+  .form__field{display:flex;flex-direction:column;gap:4px;font-size:.9rem}
+  .form__field label{font-weight:500}
+  .form__field--inline{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:10px}
+  .form__field--checkbox{font-size:.85rem}
+  .form__field--checkbox label{display:flex;align-items:flex-start;gap:8px;cursor:pointer}
+  .form__field--checkbox input[type="checkbox"]{margin-top:3px}
+  input[type="text"],input[type="number"],textarea,select{border-radius:12px;border:1px solid var(--line);padding:8px 10px;font-family:inherit;font-size:.9rem;background:var(--paper);color:var(--ink)}
+  .form--dark input[type="text"],.form--dark input[type="number"],.form--dark textarea,.form--dark select{background:rgba(245,241,233,.06);border-color:#35544C;color:var(--cream)}
+  .form--dark input::placeholder,.form--dark textarea::placeholder{color:rgba(245,241,233,.6)}
+  textarea{resize:vertical}
+  .form__error{color:#B93535;font-size:.78rem;min-height:1em}
+  .form__actions{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .form__alt{font-size:.85rem;color:var(--muted)}
+  .form--dark .form__alt{color:rgba(245,241,233,.8)}
+  .form__alt-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .messenger-link{display:inline-flex;align-items:center;gap:4px;font-size:.85rem;padding:4px 10px;border-radius:999px;background:#F6E8D2}
+  .form--dark .messenger-link{background:rgba(245,241,233,.08)}
+  .form__status{font-size:.85rem;min-height:1.2em}
+  /* FAQ */
+  .faq{padding:26px 0 28px;background:var(--cream)}
+  .faq-list{display:flex;flex-direction:column;gap:10px}
+  .faq-item{background:var(--paper);border-radius:16px;border:1px solid var(--line);padding:8px 12px}
+  .faq-item__summary{list-style:none;cursor:pointer;font-weight:500;font-size:.95rem}
+  .faq-item[open] .faq-item__summary{color:var(--pine)}
+  .faq-item__summary::-webkit-details-marker{display:none}
+  .faq-item__summary::after{content:"▾";float:right;color:var(--muted)}
+  .faq-item[open] .faq-item__summary::after{transform:rotate(180deg)}
+  .faq-item__content{margin-top:6px;font-size:.9rem;color:var(--muted)}
+  /* Team */
+  .team{padding:26px 0 30px}
+  .team__intro p{margin:0 0 12px;font-size:.95rem;color:var(--muted)}
+  .team-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:12px}
+  .team-card{background:var(--paper);border-radius:18px;border:1px solid var(--line);padding:12px 14px}
+  .team-card__title{margin:0 0 4px;font-size:1rem;color:var(--pine)}
+  .team-card__text{margin:0;font-size:.9rem;color:var(--muted)}
+  .team__note{margin-top:10px;font-size:.85rem;color:var(--muted)}
+  /* Request */
+  .request{padding:26px 0 30px;background:var(--cream)}
+  .request__inner{display:flex;flex-direction:column;gap:18px}
+  .request__script{font-family:var(--font-accent);font-size:1.3rem;margin:0 0 8px}
+  /* Footer CTA */
+  .footer-cta{padding:24px 0 26px;background:linear-gradient(135deg,#304F47,#0E2B26);color:var(--cream)}
+  .footer-cta__inner{display:flex;flex-direction:column;gap:18px}
+  .footer-cta__script{font-family:var(--font-accent);font-size:1.4rem;margin:0 0 8px}
+  .footer-cta__right{display:flex;flex-direction:column;gap:12px}
+  .footer-cta__contacts{font-size:.9rem;color:rgba(245,241,233,.9)}
+  .footer-cta__messengers{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+  .footer-cta__city{margin:0;font-size:.9rem}
+  /* Site footer */
+  .site-footer{border-top:1px solid var(--line);background:var(--paper);padding:14px 0 18px;font-size:.85rem;color:var(--muted)}
+  .site-footer__inner{display:flex;flex-direction:column;gap:12px}
+  .site-footer__brand{display:flex;flex-direction:column;gap:4px}
+  .site-footer__tagline{letter-spacing:.16em;text-transform:uppercase;font-size:.7rem}
+  /* Modal */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:80}
+  .modal--open{display:flex}
+  .modal__overlay{position:absolute;inset:0;background:rgba(0,0,0,.36)}
+  .modal__dialog{position:relative;max-width:640px;width:calc(100% - 32px);background:var(--paper);border-radius:20px;padding:18px 16px 16px;box-shadow:0 16px 40px rgba(0,0,0,.18);z-index:1}
+  .modal__close{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:999px;border:1px solid var(--line);background:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+  .modal__close span{position:absolute;width:14px;height:2px;background:var(--muted);border-radius:999px}
+  .modal__close span:first-child{transform:rotate(45deg)}
+  .modal__close span:last-child{transform:rotate(-45deg)}
+  .modal__title{margin:0 30px 4px 0;font-size:1.2rem;color:var(--pine)}
+  .modal__meta{margin:0 0 10px;font-size:.9rem;color:var(--muted)}
+  .modal__grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:12px}
+  .modal__subtitle{margin:0 0 4px;font-size:.95rem;color:var(--pine)}
+  .modal-list{margin:0;padding-left:18px;font-size:.87rem;color:var(--muted)}
+  .modal__season,.modal__note{margin:8px 0 0;font-size:.9rem;color:var(--muted)}
+  .modal__actions{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  svg.icon{stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .tours__error{font-size:.9rem;color:#B93535}
+  /* Legal sections */
+  .legal-section{padding:26px 0 30px;background:var(--paper)}
+  .legal-section p,.legal-section li{font-size:.9rem;color:var(--muted)}
+  .legal-section ul{padding-left:18px}
+  /* Mobile nav open */
+  .nav-open .main-nav{position:fixed;inset:var(--header-height) 0 auto;background:rgba(245,241,233,.98);border-bottom:1px solid var(--line);padding:10px 16px 16px;display:block;z-index:40}
+  .nav-open .main-nav__list{flex-direction:column;align-items:flex-start}
+  .nav-open .menu-toggle{position:relative;z-index:41}
+  .nav-open .menu-toggle__line:first-child{transform:rotate(45deg) translateY(2px)}
+  .nav-open .menu-toggle__line:last-child{transform:rotate(-45deg) translateY(-2px)}
+  .hero-note__text{white-space:nowrap}
+  .site-footer a{text-decoration:underline dotted transparent}
+  .site-footer a:hover{text-decoration-color:var(--muted)}
+  /* Media queries */
+  @media (min-width:640px){
+    .hero__inner{flex-direction:row;align-items:stretch;gap:18px}
+    .hero__content{flex:0 0 40%}
+    .hero__media{flex:1}
+    .trust__inner{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .tours-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .why-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .directions-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .departures__inner{flex-direction:row;align-items:flex-start}
+    .departures__info{flex:1}
+    #waitlist-form{flex:1}
+    .form__field--inline{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .request__inner{flex-direction:row}
+    .request__intro{flex:0 0 38%}
+    #request-form{flex:1}
+    .footer-cta__inner{flex-direction:row;align-items:center}
+    .footer-cta__text{flex:1}
+    .footer-cta__right{flex:1}
+    .site-footer__inner{flex-direction:row;justify-content:space-between;align-items:flex-start}
+    .modal__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (min-width:880px){
+    .main-nav{display:block}
+    .btn-header-cta{display:inline-flex}
+    .menu-toggle{display:none}
+    .hero{padding-top:32px}
+    .hero__title{font-size:3rem}
+    .tours-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+<!-- SVG-спрайт иконок -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="mountain" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 19L11.5 5L21 19H3Z" />
+      <path d="M11.5 5L15 11L13 13L11.5 11L10 13L8 11L11.5 5Z" />
+    </g>
+  </symbol>
+  <symbol id="shield-check" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3L5 5.5V11C5 15.4 8 18.8 12 20.5C16 18.8 19 15.4 19 11V5.5L12 3Z" />
+      <path d="M9 12.5L11 14.5L15 10.5" />
+    </g>
+  </symbol>
+  <symbol id="people" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8" cy="8" r="3" />
+      <circle cx="16" cy="9" r="3" />
+      <path d="M4 18C4.7 15.6 6.2 14 8.5 14C10.8 14 12.3 15.6 13 18" />
+      <path d="M13.5 18C14.2 15.9 15.5 14.7 17.5 14.7C19.4 14.7 20.7 15.7 21.3 17.7" />
+    </g>
+  </symbol>
+  <symbol id="backpack" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="7" y="6" width="10" height="13" rx="2" />
+      <path d="M9 6V5C9 3.9 9.9 3 11 3H13C14.1 3 15 3.9 15 5V6" />
+      <path d="M9 11H15" />
+      <path d="M9 9H15" />
+      <path d="M7 10L5 11.5V17C5 18.1 5.9 19 7 19" />
+      <path d="M17 10L19 11.5V17C19 18.1 18.1 19 17 19" />
+    </g>
+  </symbol>
+  <symbol id="leaf" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 19C5 12 10 5 19 5C19 14 12 19 5 19Z" />
+      <path d="M5 19L14 10" />
+    </g>
+  </symbol>
+  <symbol id="pot" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="9" width="14" height="8" rx="2" />
+      <path d="M7 9V7H17V9" />
+      <path d="M4 11H3" />
+      <path d="M21 11H20" />
+    </g>
+  </symbol>
+  <symbol id="kettle" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 8C9.7 6.5 10.7 5.8 12 5.8C13.3 5.8 14.3 6.5 15 8" />
+      <path d="M8 9H16L17.5 11.5V17C17.5 18.1 16.6 19 15.5 19H8.5C7.4 19 6.5 18.1 6.5 17V11.5L8 9Z" />
+      <path d="M17 11H19C20.1 11 21 11.9 21 13C21 14.1 20.1 15 19 15H18.3" />
+    </g>
+  </symbol>
+  <symbol id="flower" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="10" r="2" />
+      <path d="M12 4C10.7 4 10 5.3 10 6.5C10 7.7 10.7 9 12 9C13.3 9 14 7.7 14 6.5C14 5.3 13.3 4 12 4Z" />
+      <path d="M17 7C15.7 7 15 8.3 15 9.5C15 10.7 15.7 12 17 12C18.3 12 19 10.7 19 9.5C19 8.3 18.3 7 17 7Z" />
+      <path d="M7 7C5.7 7 5 8.3 5 9.5C5 10.7 5.7 12 7 12C8.3 12 9 10.7 9 9.5C9 8.3 8.3 7 7 7Z" />
+      <path d="M12 12V20" />
+      <path d="M10 16H14" />
+    </g>
+  </symbol>
+  <symbol id="house" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11L12 4L20 11" />
+      <path d="M6 10V19H18V10" />
+      <path d="M10 19V14H14V19" />
+    </g>
+  </symbol>
+  <symbol id="minibus" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="8" width="16" height="9" rx="2" />
+      <path d="M19 11H21V16C21 17.1 20.1 18 19 18H18" />
+      <circle cx="8" cy="18" r="1.5" />
+      <circle cx="16" cy="18" r="1.5" />
+      <path d="M4 11H11" />
+      <path d="M12 11H18" />
+    </g>
+  </symbol>
+  <symbol id="guitar" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="14" r="3" />
+      <path d="M11 12L17 6" />
+      <path d="M18.5 4.5L20 3" />
+      <path d="M17 6L18.5 7.5" />
+      <path d="M8 13L10 15" />
+    </g>
+  </symbol>
+  <symbol id="phone" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 4H10L11.5 8L9.7 9.1C10.5 10.8 11.8 12.2 13.5 13L14.6 11.2L18 12.5V15C18 15.6 17.8 16.2 17.4 16.6C17.1 17 16.5 17.2 16 17.2C11.6 17 8 13.4 7.8 9C7.8 8.5 8 7.9 8.4 7.6C8.8 7.2 9.4 7 10 7" />
+    </g>
+  </symbol>
+  <symbol id="arrow-right" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12H19" />
+      <path d="M13 6L19 12L13 18" />
+    </g>
+  </symbol>
+  <symbol id="star" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3L14.6 8.4L20.5 9.2L16 13.4L17.1 19.3L12 16.4L6.9 19.3L8 13.4L3.5 9.2L9.4 8.4L12 3Z" />
+    </g>
+  </symbol>
+  <symbol id="vk" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7H7L9 12L11 7H13L12 11L14 17H11L9.5 13.5L8 17H5.5L7.5 12L4 7Z" />
+      <path d="M14 9C14.7 9 15.4 9.3 15.9 9.8C17 10.9 17.6 12.4 18.5 13.7C18.8 14.2 19.3 14.7 20 14.7" />
+    </g>
+  </symbol>
+  <symbol id="telegram" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 12L20 4L17 19L11.5 14.5L9 17V12L16 7" />
+    </g>
+  </symbol>
+  <symbol id="whatsapp" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 19L6 16C4.9 14.7 4.3 13 4.3 11.2C4.3 7.8 7.1 5 10.5 5C13.9 5 16.7 7.8 16.7 11.2C16.7 14.6 13.9 17.4 10.5 17.4C9 17.4 7.6 16.9 6.5 16.1L5 19Z" />
+      <path d="M9.5 9C9.3 9.6 9.2 10.1 9.3 10.5C9.5 11.2 10.2 12.1 10.9 12.6C11.6 13.1 12.3 13.4 13 13.5C13.4 13.6 13.9 13.4 14.3 13.1L14.7 12.8" />
+    </g>
+  </symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo-wrap">
+      <span class="logo-svg" role="img" aria-label="Турклуб «Красивый Белорецк»">
+        <svg xmlns="http://www.w3.org/2000/svg" width="220" height="52" viewBox="0 0 220 52">
+          <defs>
+            <style>
+              .l1{fill:none;stroke:#123830;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+              .s1{fill:none;stroke:#EBA63C;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+              .w1{font-family:'Caveat',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:22px;fill:#123830}
+              .t1{font-family:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:8px;letter-spacing:0.18em;fill:#6C7A72}
+            </style>
+          </defs>
+          <g transform="translate(4 8)">
+            <path class="l1" d="M2 30L18 8L31 26L40 14L54 30" />
+            <path class="l1" d="M18 8L24 16L20 20" />
+            <circle class="s1" cx="46" cy="6" r="4" />
+            <path class="s1" d="M46 0.5V-2.5M46 14.5V10.5M39.5 6H36.5M55.5 6H51.5M41 2L38.6-0.4M52.9 12.9L50.3 10.3" />
+          </g>
+          <text class="w1" x="70" y="26">Красивый Белорецк</text>
+          <text class="t1" x="70" y="40">ГОРЫ · ЛЮДИ · ВПЕЧАТЛЕНИЯ</text>
+        </svg>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Главное меню">
+      <ul class="main-nav__list">
+        <li class="main-nav__item main-nav__item--dropdown" aria-expanded="false">
+          <button class="nav-link nav-link--dropdown" type="button" aria-expanded="false" aria-haspopup="true">
+            Туры
+            <span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <ul class="dropdown" aria-label="Разделы туров">
+            <li><a href="#tours" class="dropdown__link">Популярные туры</a></li>
+            <li><a href="#departures" class="dropdown__link">Ближайшие выезды</a></li>
+            <li><a href="#directions" class="dropdown__link">Все направления</a></li>
+          </ul>
+        </li>
+        <li class="main-nav__item"><a href="#directions-newbies" class="nav-link">Новичкам</a></li>
+        <li class="main-nav__item"><a href="#gastro" class="nav-link">Гастро-треккинг</a></li>
+        <li class="main-nav__item"><a href="#directions-fests" class="nav-link">Фестивали</a></li>
+        <li class="main-nav__item"><a href="#why" class="nav-link">Корпоративным</a></li>
+        <li class="main-nav__item"><a href="#directions-stay" class="nav-link">Размещение</a></li>
+        <li class="main-nav__item"><a href="#directions-transfer" class="nav-link">Трансферы</a></li>
+        <li class="main-nav__item"><a href="#team" class="nav-link">О нас</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-contacts">
+      <div class="header-messengers" aria-label="Мессенджеры">
+        <a href="https://vk.com" class="messenger-icon-link" target="_blank" rel="noopener" aria-label="ВКонтакте">
+          <svg class="icon icon--messenger" aria-hidden="true">
+            <use href="#vk"></use>
+          </svg>
+        </a>
+        <a href="https://t.me/" class="messenger-icon-link" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg class="icon icon--messenger" aria-hidden="true">
+            <use href="#telegram"></use>
+          </svg>
+        </a>
+        <a href="https://wa.me/" class="messenger-icon-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg class="icon icon--messenger" aria-hidden="true">
+            <use href="#whatsapp"></use>
+          </svg>
+        </a>
+      </div>
+      <button class="btn btn-outline btn-header-cta" type="button" data-scroll-to="#request">
+        Забронировать тур
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu-toggle>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__tagline-top">ГОРЫ · ЛЮДИ · ВПЕЧАТЛЕНИЯ</p>
+        <h1 id="hero-title" class="hero__title">Красивый Белорецк</h1>
+        <p class="hero__subtitle">
+          Настоящие горы. Тёплые люди. Впечатления, которые остаются.
+        </p>
+        <button class="btn btn-primary hero__cta" type="button" data-scroll-to="#tours">
+          Выбрать тур
+        </button>
+        <p class="hero__descriptor">Белорецкий район и Южный Урал</p>
+      </div>
+
+      <div class="hero__media">
+        <div class="hero-photo-placeholder" role="img" aria-label="Здесь появится фотография Южного Урала после съёмки">
+          <span>Фотография Южного Урала появится после съёмки первой группы.</span>
+        </div>
+
+        <div class="hero-bullets" aria-label="Наши принципы">
+          <div class="icon-bullet">
+            <div class="icon-bullet__icon">
+              <svg class="icon" aria-hidden="true"><use href="#mountain"></use></svg>
+            </div>
+            <div>
+              <p class="icon-bullet__title">Природа и горы</p>
+              <p class="icon-bullet__subtitle">Маршруты по Белорецкому району и хребтам Южного Урала.</p>
+            </div>
+          </div>
+          <div class="icon-bullet">
+            <div class="icon-bullet__icon">
+              <svg class="icon" aria-hidden="true"><use href="#shield-check"></use></svg>
+            </div>
+            <div>
+              <p class="icon-bullet__title">Безопасность и забота</p>
+              <p class="icon-bullet__subtitle">Ответственные проводники, продуманные маршруты и запасные варианты.</p>
+            </div>
+          </div>
+          <div class="icon-bullet">
+            <div class="icon-bullet__icon">
+              <svg class="icon" aria-hidden="true"><use href="#backpack"></use></svg>
+            </div>
+            <div>
+              <p class="icon-bullet__title">Авторские маршруты</p>
+              <p class="icon-bullet__subtitle">Спокойные выезды и походы для тех, кто хочет «почувствовать» Урал.</p>
+            </div>
+          </div>
+          <div class="icon-bullet">
+            <div class="icon-bullet__icon">
+              <svg class="icon" aria-hidden="true"><use href="#kettle"></use></svg>
+            </div>
+            <div>
+              <p class="icon-bullet__title">Гастрономия Башкирии</p>
+              <p class="icon-bullet__subtitle">Чай на травах, мёд, выпечка и походный формат башкирской кухни.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-note">
+          <span class="hero-note__text">Южный Урал ждёт!</span>
+          <svg class="hero-note__heart" viewBox="0 0 40 30" aria-hidden="true">
+            <path d="M20 27C20 27 4 18.5 4 9.5C4 5.9 6.8 3 10.3 3C13.1 3 15.3 4.7 16.6 6.7C17.9 4.7 20.1 3 22.9 3C26.4 3 29.2 5.9 29.2 9.5C29.2 18.5 20 27 20 27Z"
+                  fill="none" stroke="#EBA63C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="trust" aria-label="Принципы работы">
+    <div class="container trust__inner">
+      <div class="trust-card">
+        <h2 class="trust-card__title">Безопасность на первом месте</h2>
+        <p class="trust-card__text">Продумываем маршрут, запасные выходы и режим движения с учётом группы и погоды.</p>
+      </div>
+      <div class="trust-card">
+        <h2 class="trust-card__title">Внимание к каждому</h2>
+        <p class="trust-card__text">Небольшие группы, неспешный темп и поддержка на маршруте — особенно для тех, кто впервые в горах.</p>
+      </div>
+      <div class="trust-card">
+        <h2 class="trust-card__title">Комфорт</h2>
+        <p class="trust-card__text">Помогаем с экипировкой, трансферами, размещением и питанием, чтобы думать о горах, а не о логистике.</p>
+      </div>
+      <div class="trust-card">
+        <h2 class="trust-card__title">Настоящие горы</h2>
+        <p class="trust-card__text">Живописные маршруты Южного Урала без стеснительных обещаний и «картинок из стоков».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular tours -->
+  <section class="tours" id="tours" aria-labelledby="tours-title">
+    <div class="container">
+      <div class="section-heading">
+        <h2 id="tours-title" class="section-title">Популярные туры</h2>
+        <button class="section-link" type="button" data-scroll-to="#directions">
+          Все направления
+          <svg class="icon icon--small" aria-hidden="true"><use href="#arrow-right"></use></svg>
+        </button>
+      </div>
+
+      <div id="tours-list" class="tours-grid" aria-live="polite">
+        <p>Загружаем туры по Южному Уралу…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gastro-trekking -->
+  <section class="gastro" id="gastro" aria-labelledby="gastro-title">
+    <div class="container gastro__inner">
+      <div class="gastro__media">
+        <div class="photo-placeholder photo-placeholder--food" role="img" aria-label="Здесь появится фотография блюд башкирской кухни в походном формате">
+          <span>Фотосъёмка гастро-маршрутов запланирована на сезон. После первых выездов здесь будут реальные кадры.</span>
+        </div>
+        <div class="hero-note hero-note--gastro">
+          <span class="hero-note__text">Настоящая башкирская кухня в горах!</span>
+          <svg class="hero-note__heart" viewBox="0 0 40 30" aria-hidden="true">
+            <path d="M20 27C20 27 4 18.5 4 9.5C4 5.9 6.8 3 10.3 3C13.1 3 15.3 4.7 16.6 6.7C17.9 4.7 20.1 3 22.9 3C26.4 3 29.2 5.9 29.2 9.5C29.2 18.5 20 27 20 27Z"
+                  fill="none" stroke="#EBA63C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="gastro__content">
+        <div class="gastro-badge">
+          <svg class="icon icon--small" aria-hidden="true"><use href="#star"></use></svg>
+          <span>Особенный формат</span>
+        </div>
+        <h2 id="gastro-title" class="section-title">Гастро-треккинг</h2>
+        <p class="gastro__text">
+          Мы объединяем походы и гастрономию: вас ждут блюда башкирской кухни,
+          местные продукты и чай на травах в теплом кругу группы. Формат подойдёт
+          тем, кто хочет почувствовать Южный Урал на вкус и не гнаться за километрами.
+        </p>
+        <button class="btn btn-secondary-dark gastro__cta" type="button" data-scroll-to="#request" data-prefill-direction="Вкус Башкирии. Гастро-треккинг">
+          Выбрать гастро-тур
+        </button>
+
+        <div class="gastro-points">
+          <div class="icon-bullet icon-bullet--inline">
+            <div class="icon-bullet__icon"><svg class="icon" aria-hidden="true"><use href="#pot"></use></svg></div>
+            <p class="icon-bullet__subtitle">Национальные блюда в походном формате.</p>
+          </div>
+          <div class="icon-bullet icon-bullet--inline">
+            <div class="icon-bullet__icon"><svg class="icon" aria-hidden="true"><use href="#leaf"></use></svg></div>
+            <p class="icon-bullet__subtitle">Местные фермеры и продукты из Башкирии.</p>
+          </div>
+          <div class="icon-bullet icon-bullet--inline">
+            <div class="icon-bullet__icon"><svg class="icon" aria-hidden="true"><use href="#kettle"></use></svg></div>
+            <p class="icon-bullet__subtitle">Чайные церемонии на природе и у костра.</p>
+          </div>
+          <div class="icon-bullet icon-bullet--inline">
+            <div class="icon-bullet__icon"><svg class="icon" aria-hidden="true"><use href="#flower"></use></svg></div>
+            <p class="icon-bullet__subtitle">Истории о традициях и рецептах башкирской кухни.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="why" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <h2 id="why-title" class="section-title">Почему с нами?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-item__icon"><svg class="icon" aria-hidden="true"><use href="#shield-check"></use></svg></div>
+          <div>
+            <h3 class="why-item__title">Безопасность и ответственность</h3>
+            <p class="why-item__text">Планируем маршрут, время в пути и запасные варианты с учётом уровня группы и прогноза погоды.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item__icon"><svg class="icon" aria-hidden="true"><use href="#people"></use></svg></div>
+          <div>
+            <h3 class="why-item__title">Внимание к группе</h3>
+            <p class="why-item__text">Следим за самочувствием участников, делаем паузы и не гоним тех, кто хочет идти спокойнее.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item__icon"><svg class="icon" aria-hidden="true"><use href="#backpack"></use></svg></div>
+          <div>
+            <h3 class="why-item__title">Полное оснащение</h3>
+            <p class="why-item__text">Помогаем подобрать или арендовать часть снаряжения, рассказываем, что взять с собой и что лучше оставить дома.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item__icon"><svg class="icon" aria-hidden="true"><use href="#mountain"></use></svg></div>
+          <div>
+            <h3 class="why-item__title">Авторские маршруты</h3>
+            <p class="why-item__text">Подбираем маршруты под сезон и уровень: от спокойных прогулок до выездов с элементами экспедиции.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item__icon"><svg class="icon" aria-hidden="true"><use href="#pot"></use></svg></div>
+          <div>
+            <h3 class="why-item__title">Гастрономия Башкирии</h3>
+            <p class="why-item__text">Чай на травах, мёд, сыры, выпечка и другие блюда — знакомим с местным вкусом аккуратно и без перегрузки.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-item__icon"><svg class="icon" aria-hidden="true"><use href="#guitar"></use></svg></div>
+          <div>
+            <h3 class="why-item__title">Корпоративные программы</h3>
+            <p class="why-item__text">Форматы для команд: выезды, фестивали, тимбилдинг на природе, по запросу — участие фасилитаторов и коуча.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions -->
+  <section class="directions" id="directions" aria-labelledby="directions-title">
+    <div class="container">
+      <h2 id="directions-title" class="section-title">Направления</h2>
+      <div class="directions-grid">
+        <a href="#tours" class="direction-card" id="directions-newbies">
+          <div class="direction-card__media">
+            <div class="photo-placeholder photo-placeholder--direction" aria-hidden="true">
+              <span>Маршруты для первого выхода в горы.</span>
+            </div>
+          </div>
+          <div class="direction-card__body">
+            <h3 class="direction-card__title">Туры для новичков</h3>
+            <p class="direction-card__text">Небольшие расстояния, мягкий набор высоты, много остановок и внимательное сопровождение.</p>
+            <span class="direction-card__link">
+              Смотреть туры
+              <svg class="icon icon--small" aria-hidden="true"><use href="#arrow-right"></use></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#tours" class="direction-card" id="directions-fests">
+          <div class="direction-card__media">
+            <div class="photo-placeholder photo-placeholder--direction" aria-hidden="true">
+              <span>Маршруты с песнями у костра и дружеской атмосферой.</span>
+            </div>
+          </div>
+          <div class="direction-card__body">
+            <h3 class="direction-card__title">Туры-фестивали</h3>
+            <p class="direction-card__text">Небольшие походы, живой звук, костры и общение. Хороший вариант для компаний и команд.</p>
+            <span class="direction-card__link">
+              Смотреть туры
+              <svg class="icon icon--small" aria-hidden="true"><use href="#arrow-right"></use></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#directions-stay" class="direction-card" id="directions-stay">
+          <div class="direction-card__media">
+            <div class="photo-placeholder photo-placeholder--direction" aria-hidden="true">
+              <span>Гостевые дома и базы в Белорецком районе.</span>
+            </div>
+          </div>
+          <div class="direction-card__body">
+            <h3 class="direction-card__title">Размещение</h3>
+            <p class="direction-card__text">Поможем подобрать гостевой дом или турбазу с учётом сезона и состава группы.</p>
+            <span class="direction-card__link">
+              Узнать варианты
+              <svg class="icon icon--small" aria-hidden="true"><use href="#arrow-right"></use></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="#directions-transfer" class="direction-card" id="directions-transfer">
+          <div class="direction-card__media">
+            <div class="photo-placeholder photo-placeholder--direction" aria-hidden="true">
+              <span>Организованные трансферы к старту маршрутов.</span>
+            </div>
+          </div>
+          <div class="direction-card__body">
+            <h3 class="direction-card__title">Трансферы</h3>
+            <p class="direction-card__text">Собираем группы на выезды с отправлением из Уфы, Магнитогорска и Челябинска — по согласованному расписанию.</p>
+            <span class="direction-card__link">
+              Узнать про трансферы
+              <svg class="icon icon--small" aria-hidden="true"><use href="#arrow-right"></use></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departures -->
+  <section class="departures" id="departures" aria-labelledby="departures-title">
+    <div class="container departures__inner">
+      <div class="departures__info">
+        <h2 id="departures-title" class="section-title">Ближайшие выезды</h2>
+        <p>Сейчас мы формируем календарь походов и выездов по Южному Уралу. Как только появятся подтверждённые даты, они появятся здесь и в наших сообществах.</p>
+        <p>Если хотите узнать о первых наборах заранее, оставьте контакты — мы пришлём расписание и подскажем, какой маршрут подойдёт именно вам.</p>
+      </div>
+      <form id="waitlist-form" class="form form--light" novalidate>
+        <div class="form__field">
+          <label for="wait-name">Имя<span aria-hidden="true">*</span></label>
+          <input type="text" id="wait-name" name="name" required autocomplete="name">
+          <span class="form__error" id="wait-name-error"></span>
+        </div>
+        <div class="form__field">
+          <label for="wait-contact">Телефон или e-mail<span aria-hidden="true">*</span></label>
+          <input type="text" id="wait-contact" name="contact" required autocomplete="tel">
+          <span class="form__error" id="wait-contact-error"></span>
+        </div>
+        <div class="form__field">
+          <label for="wait-direction">Желаемое направление</label>
+          <select id="wait-direction" name="direction" data-direction-select>
+            <option value="">Любой маршрут</option>
+          </select>
+        </div>
+        <div class="form__field">
+          <label for="wait-comment">Комментарий</label>
+          <textarea id="wait-comment" name="comment" rows="3" placeholder="Например: хочу однодневный тур для первой поездки"></textarea>
+        </div>
+        <div class="form__field form__field--checkbox">
+          <label>
+            <input type="checkbox" id="wait-consent" name="consent" required>
+            <span>Я согласен(а) с <a href="#privacy">политикой обработки персональных данных</a></span>
+          </label>
+          <span class="form__error" id="wait-consent-error"></span>
+        </div>
+        <div class="form__actions">
+          <button type="submit" class="btn btn-primary">Сообщить о выездах</button>
+        </div>
+        <p class="form__status" aria-live="polite" id="wait-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 id="faq-title" class="section-title">Частые вопросы</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-item__summary">Подойдут ли ваши туры тем, кто ни разу не был в горах?</summary>
+          <div class="faq-item__content">
+            <p>Да. Несколько маршрутов мы специально адаптируем под первую поездку: спокойный темп, частые остановки и подробный бриф перед выходом. В описании туров есть отметка «для новичков», а при заявке мы помогаем подобрать маршрут по уровню.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__summary">Какая нужна экипировка?</summary>
+          <div class="faq-item__content">
+            <p>Базовый набор: удобная обувь, непромокаемая и ветрозащитная одежда, индивидуальная аптечка и личные вещи. Перед каждым выездом мы отправляем список с рекомендациями и подсказываем, что можно взять в аренду или докупить на месте.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__summary">Какой размер групп?</summary>
+          <div class="faq-item__content">
+            <p>Мы набираем небольшие группы, чтобы у инструкторов было внимание к каждому. Конкретное количество участников зависит от формата тура и озвучивается при наборе.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__summary">Что с погодой на Южном Урале?</summary>
+          <div class="faq-item__content">
+            <p>Погода в горах может меняться быстро, поэтому мы всегда закладываем запас по времени и по одежде. Перед выездом присылаем актуальный прогноз и рекомендации, а на маршруте следим за условиями и при необходимости корректируем программу.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__summary">Как происходит отмена или перенос участия?</summary>
+          <div class="faq-item__content">
+            <p>Правила бронирования и отмен описаны в разделе <a href="#offer">правил участия</a>. В общих чертах: чем раньше сообщаете об изменениях, тем больше вариантов переноса или возврата. При форс-мажорах мы стараемся предложить перенос на другие даты или маршрут.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__summary">Можно ли взять с собой детей?</summary>
+          <div class="faq-item__content">
+            <p>Часть маршрутов подходит для семей с детьми. Всё зависит от возраста, опыта и конкретного тура. При заявке расскажите нам о ребёнке — подберём формат и нагрузку, которые будут посильными и безопасными.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__summary">Какой у вас темп в походах?</summary>
+          <div class="faq-item__content">
+            <p>Мы ходим в комфортном темпе, ориентируясь на группу, а не на рекорды. Делаем паузы на отдых и фото, обсуждаем участки маршрута заранее и предупреждаем о более энергичных подъёмах.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="team" id="team" aria-labelledby="team-title">
+    <div class="container team__inner">
+      <div class="team__intro">
+        <h2 id="team-title" class="section-title">Команда</h2>
+        <p>За турами «Красивого Белорецка» стоят люди, которые любят Южный Урал и готовы делиться им бережно и без спешки.</p>
+      </div>
+      <div class="team-grid">
+        <article class="team-card">
+          <h3 class="team-card__title">Инструкторы и проводники</h3>
+          <p class="team-card__text">Знают особенности местного рельефа и погоды, подбирают темп под группу и отвечают за безопасность на маршруте.</p>
+        </article>
+        <article class="team-card">
+          <h3 class="team-card__title">Организаторы и координаторы</h3>
+          <p class="team-card__text">Помогают с выбором тура, логистикой, размещением и отвечают на вопросы до и после поездки.</p>
+        </article>
+      </div>
+      <p class="team__note">Персональные данные конкретных инструкторов и гидов публикуются только с их согласия и могут быть добавлены позже.</p>
+    </div>
+  </section>
+
+  <!-- Request form -->
+  <section class="request" id="request" aria-labelledby="request-title">
+    <div class="container request__inner">
+      <div class="request__intro">
+        <p class="request__script">Выберите тур, соберите друзей — остальное поможем организовать.</p>
+        <h2 id="request-title" class="section-title">Оставить заявку на тур</h2>
+        <p>Напишите, что вам интересно, и мы подскажем подходящие маршруты по Белорецкому району и Южному Уралу.</p>
+      </div>
+
+      <form id="request-form" class="form form--dark" novalidate>
+        <div class="form__field">
+          <label for="req-name">Имя<span aria-hidden="true">*</span></label>
+          <input type="text" id="req-name" name="name" required autocomplete="name">
+          <span class="form__error" id="req-name-error"></span>
+        </div>
+        <div class="form__field">
+          <label for="req-contact">Телефон или e-mail<span aria-hidden="true">*</span></label>
+          <input type="text" id="req-contact" name="contact" required autocomplete="tel">
+          <span class="form__error" id="req-contact-error"></span>
+        </div>
+        <div class="form__field">
+          <label for="req-direction">Направление</label>
+          <select id="req-direction" name="direction" data-direction-select>
+            <option value="">Выберите из списка</option>
+          </select>
+        </div>
+        <div class="form__field form__field--inline">
+          <div>
+            <label for="req-people">Количество человек</label>
+            <input type="number" id="req-people" name="people" min="1" inputmode="numeric">
+          </div>
+          <div>
+            <label for="req-dates">Удобные даты</label>
+            <input type="text" id="req-dates" name="dates" placeholder="Например: майские, выходные, осень">
+          </div>
+        </div>
+        <div class="form__field">
+          <label for="req-comment">Комментарий</label>
+          <textarea id="req-comment" name="comment" rows="3" placeholder="Расскажите, чего ждёте от поездки"></textarea>
+        </div>
+        <div class="form__field form__field--checkbox">
+          <label>
+            <input type="checkbox" id="req-consent" name="consent" required>
+            <span>Я согласен(а) с <a href="#privacy">политикой обработки персональных данных</a></span>
+          </label>
+          <span class="form__error" id="req-consent-error"></span>
+        </div>
+        <div class="form__actions">
+          <button type="submit" class="btn btn-secondary-dark">Отправить заявку</button>
+          <div class="form__alt">
+            <span>Или напишите нам в мессенджер:</span>
+            <div class="form__alt-links">
+              <a href="https://t.me/" target="_blank" rel="noopener" class="messenger-link">
+                <svg class="icon" aria-hidden="true"><use href="#telegram"></use></svg>
+                <span>Telegram</span>
+              </a>
+              <a href="https://wa.me/" target="_blank" rel="noopener" class="messenger-link">
+                <svg class="icon" aria-hidden="true"><use href="#whatsapp"></use></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="form__status" aria-live="polite" id="request-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="footer-cta" aria-labelledby="footer-cta-title">
+    <div class="container footer-cta__inner">
+      <div class="footer-cta__text">
+        <p class="footer-cta__script">Откройте для себя настоящий Белорецк и Южный Урал ♥</p>
+        <h2 id="footer-cta-title" class="section-title" style="color:#F5F1E9;">Выбирайте тур, собирайте команду и давайте знакомиться</h2>
+      </div>
+      <div class="footer-cta__right">
+        <button class="btn btn-primary footer-cta__btn" type="button" data-scroll-to="#request">
+          Найти свой маршрут
+        </button>
+        <div class="footer-cta__contacts">
+          <p class="footer-cta__label">Мы на связи 7 дней в неделю</p>
+          <p class="footer-cta__phone">Актуальный телефон для связи и расписание выездов появятся здесь после запуска набора групп. Пока можно написать нам в мессенджер или через форму заявки.</p>
+          <div class="footer-cta__messengers" aria-label="Мессенджеры и соцсети">
+            <a href="https://vk.com" target="_blank" rel="noopener" class="messenger-link">
+              <svg class="icon" aria-hidden="true"><use href="#vk"></use></svg><span>ВКонтакте</span>
+            </a>
+            <a href="https://t.me/" target="_blank" rel="noopener" class="messenger-link">
+              <svg class="icon" aria-hidden="true"><use href="#telegram"></use></svg><span>Telegram</span>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener" class="messenger-link">
+              <svg class="icon" aria-hidden="true"><use href="#whatsapp"></use></svg><span>WhatsApp</span>
+            </a>
+          </div>
+          <p class="footer-cta__city">Белорецк, Республика Башкортостан</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Политика ПДн -->
+  <section class="legal-section" id="privacy" aria-labelledby="privacy-title">
+    <div class="container">
+      <h2 id="privacy-title" class="section-title">Политика обработки персональных данных</h2>
+      <p>Настоящая политика обработки персональных данных (далее — Политика) действует в отношении персональных данных, которые пользователи передают через формы на сайте туристического клуба «Красивый Белорецк».</p>
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">1. Общие положения</h3>
+      <p>Обработка персональных данных осуществляется в соответствии с законодательством Российской Федерации, включая Федеральный закон от 27.07.2006 № 152‑ФЗ «О персональных данных».</p>
+      <p>Оператором персональных данных является организатор туров «Красивый Белорецк» (далее — Оператор). Конкретные реквизиты юридического лица или индивидуального предпринимателя указываются в договоре с участником и в правилах бронирования.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">2. Состав обрабатываемых данных</h3>
+      <p>Оператор обрабатывает персональные данные, которые пользователи добровольно предоставляют через формы на сайте, в том числе:</p>
+      <ul>
+        <li>имя и при указании — фамилия;</li>
+        <li>контактный телефон и/или адрес электронной почты;</li>
+        <li>дополнительная информация, указанная в поле «Комментарий».</li>
+      </ul>
+      <p>Специальные категории персональных данных и биометрические данные через сайт не собираются.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">3. Цели обработки</h3>
+      <p>Персональные данные обрабатываются для:</p>
+      <ul>
+        <li>обработки заявок на участие в турах и выездах;</li>
+        <li>связи с пользователями по указанным контактам;</li>
+        <li>информирования о ближайших выездах и изменениях программы (при оформлении листа ожидания);</li>
+        <li>подготовки предложений по маршрутам и формирования групп.</li>
+      </ul>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">4. Правовые основания</h3>
+      <p>Правовым основанием обработки является согласие субъекта персональных данных, выраженное путём проставления отметки в форме на сайте, а также заключение и исполнение договоров участия в турах.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">5. Передача и хранение данных</h3>
+      <p>Персональные данные не передаются третьим лицам, за исключением случаев, предусмотренных законом, а также сервисам приёма заявок (почтовые сервисы, сервисы форм) в объёме, необходимом для доставки обращения.</p>
+      <p>Срок хранения персональных данных определяется целями обработки и требованиями законодательства.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">6. Права субъекта данных</h3>
+      <p>Субъект персональных данных имеет право на получение информации об обработке своих данных, их уточнение, блокирование или уничтожение при наличии оснований, а также на отзыв согласия и обжалование действий Оператора.</p>
+    </div>
+  </section>
+
+  <!-- Правила бронирования -->
+  <section class="legal-section" id="offer" aria-labelledby="offer-title">
+    <div class="container">
+      <h2 id="offer-title" class="section-title">Правила бронирования и участия в турах</h2>
+      <p>Этот раздел описывает общие принципы бронирования мест в турах и участия в выездах «Красивого Белорецка». Конкретные условия каждого маршрута уточняются в описании программы и в договоре с участником.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">1. Бронирование</h3>
+      <p>Предварительную заявку можно оставить через формы на сайте или по указанным каналам связи. Бронирование считается предварительным до подтверждения организатором и согласования ключевых условий (даты, формата, ориентировочной стоимости).</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">2. Оплата и возвраты</h3>
+      <p>Размер предоплаты и порядок окончательного расчёта зависят от конкретного тура и сообщаются участнику до подтверждения участия.</p>
+      <p>Условия возврата средств при отказе участника, переносе тура или изменении программы фиксируются в договоре или информационном листе тура. Мы заранее информируем об удержаниях и сроках возврата.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">3. Ответственность сторон</h3>
+      <p>Организатор отвечает за подготовку маршрута, информирование участников, подбор сопровождающих и соблюдение мер безопасности в пределах своей компетенции. Участник обязуется соблюдать инструкции гида и правила поведения на маршруте, а также своевременно сообщать о своём самочувствии.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">4. Медицинские ограничения</h3>
+      <p>Участник самостоятельно оценивает состояние здоровья и при необходимости консультируется с врачом до поездки. При наличии особенностей здоровья важно заранее сообщить об этом организатору, чтобы подобрать безопасный формат участия.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">5. Дети</h3>
+      <p>Участие детей возможно только с согласия организатора и законных представителей. Допустимый возраст зависит от маршрута и нагрузки и оговаривается заранее.</p>
+
+      <h3 class="section-title" style="font-size:1.1rem;margin-top:1.4rem;">6. Изменение программы</h3>
+      <p>Организатор вправе корректировать программу (маршрут, последовательность объектов, формат размещения) при неблагоприятных погодных условиях, закрытии территорий или других обстоятельствах безопасности, стараясь сохранить общий уровень впечатлений и своевременно информировать участников.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a href="#top" class="logo-wrap">
+        <span class="logo-svg" role="img" aria-label="Турклуб «Красивый Белорецк»">
+          <svg xmlns="http://www.w3.org/2000/svg" width="220" height="52" viewBox="0 0 220 52">
+            <defs>
+              <style>
+                .l1{fill:none;stroke:#123830;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+                .s1{fill:none;stroke:#EBA63C;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+                .w1{font-family:'Caveat',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:700;font-size:22px;fill:#123830}
+                .t1{font-family:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;font-size:8px;letter-spacing:0.18em;fill:#6C7A72}
+              </style>
+            </defs>
+            <g transform="translate(4 8)">
+              <path class="l1" d="M2 30L18 8L31 26L40 14L54 30" />
+              <path class="l1" d="M18 8L24 16L20 20" />
+              <circle class="s1" cx="46" cy="6" r="4" />
+              <path class="s1" d="M46 0.5V-2.5M46 14.5V10.5M39.5 6H36.5M55.5 6H51.5M41 2L38.6-0.4M52.9 12.9L50.3 10.3" />
+            </g>
+            <text class="w1" x="70" y="26">Красивый Белорецк</text>
+            <text class="t1" x="70" y="40">ГОРЫ · ЛЮДИ · ВПЕЧАТЛЕНИЯ</text>
+          </svg>
+        </span>
+      </a>
+      <p class="site-footer__tagline">ГОРЫ · ЛЮДИ · ВПЕЧАТЛЕНИЯ</p>
+    </div>
+    <div class="site-footer__legal">
+      <p>Организатор туров «Красивый Белорецк».</p>
+      <p>Информация на сайте носит ознакомительный характер и не является публичной офертой. Подробные условия участия — в разделе <a href="#offer">правил бронирования</a>.</p>
+      <p><a href="#privacy">Политика обработки персональных данных</a></p>
+      <p>Реквизиты юридического лица или индивидуального предпринимателя будут опубликованы после регистрации организатора и заключения договоров с участниками.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Модалка тура -->
+<div class="modal" id="tour-modal" aria-hidden="true" role="dialog" aria-labelledby="tour-modal-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog" role="document">
+    <button type="button" class="modal__close" aria-label="Закрыть" data-modal-close>
+      <span></span><span></span>
+    </button>
+    <h2 id="tour-modal-title" class="modal__title"></h2>
+    <p id="tour-modal-meta" class="modal__meta"></p>
+    <div class="modal__grid">
+      <div class="modal__col">
+        <h3 class="modal__subtitle">Входит в программу</h3>
+        <ul id="tour-modal-includes" class="modal-list"></ul>
+      </div>
+      <div class="modal__col">
+        <h3 class="modal__subtitle">Дополнительно оплачивается</h3>
+        <ul id="tour-modal-excludes" class="modal-list"></ul>
+      </div>
+    </div>
+    <p id="tour-modal-season" class="modal__season"></p>
+    <p id="tour-modal-note" class="modal__note"></p>
+    <div class="modal__actions">
+      <button type="button" class="btn btn-secondary-dark" id="tour-modal-to-form">Оставить заявку</button>
+      <button type="button" class="btn btn-outline" data-modal-close>Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const REQUEST_FORM_ENDPOINT = ""; // укажите Formspree/Netlify при подключении
+const WAITLIST_FORM_ENDPOINT = "";
+const TOURS = [
+  {
+    "id": 1,
+    "badge": "hit",
+    "title": "Ялангас — панорама Южного Урала",
+    "format": "Дневной тур",
+    "distance": "дистанция уточняется по треку",
+    "distance_status": "unconfirmed",
+    "duration": "1 день",
+    "days": "без ночёвки",
+    "difficulty": "лёгкая / средняя",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Сопровождение инструктором по маршруту",
+      "Групповая аптечка и средства связи",
+      "Чай и лёгкий перекус на одной из точек вида",
+      "Информационный брифинг перед выездом"
+    ],
+    "excludes": [
+      "Личный трансфер до места сбора (по договорённости можно объединяться в машины или микроавтобус)",
+      "Питание в дороге, кроме указанного перекуса",
+      "Прокат личной экипировки и одежды"
+    ],
+    "season": "Маршрут подбирается под сезон и фактические условия троп. Точные даты и формат согласуются при бронировании.",
+    "author_route": false,
+    "photo_note": "Фото с вершины Ялангаса появится после первого выезда по маршруту."
+  },
+  {
+    "id": 2,
+    "badge": "newbie",
+    "title": "Первые шаги в горы",
+    "format": "Дневной тур для новичков",
+    "distance": "аккуратная тропа без технических участков",
+    "distance_status": "unconfirmed",
+    "duration": "1 день",
+    "days": "без ночёвки",
+    "difficulty": "лёгкая",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Подробный разбор экипировки и консультация до выезда",
+      "Сопровождение инструктора и помощника на всём маршруте",
+      "Горячий чай и сладости на привале",
+      "Групповая аптечка и базовое общественное снаряжение"
+    ],
+    "excludes": [
+      "Личное питание и перекусы, кроме чая и сладостей",
+      "Проезд до места старта и обратно",
+      "Аренда палок, рюкзаков и другой личной экипировки"
+    ],
+    "season": "Проводится в периоды устойчивой безснежной тропы или по согласованию в зимнем варианте.",
+    "author_route": false,
+    "photo_note": "После первого выезда сюда добавим реальные фотографии с маршрута."
+  },
+  {
+    "id": 3,
+    "badge": "fest",
+    "title": "Авторская песня в горах",
+    "format": "Тур + фестиваль",
+    "distance": "небольшие прогулки вокруг лагеря",
+    "distance_status": "unconfirmed",
+    "duration": "2 дня",
+    "days": "1–2 ночёвки в полевых условиях или на базе",
+    "difficulty": "лёгкая",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Организация лагеря и вечерней программы у костра",
+      "Сопровождение инструкторов и организаторов фестиваля",
+      "Общая кухня и чай на костре",
+      "Простые прогулки по окрестностям лагеря"
+    ],
+    "excludes": [
+      "Проезд до места проведения и обратно",
+      "Аренда музыкальных инструментов",
+      "Спальное место на базе (если выбирается формат размещения в домиках)"
+    ],
+    "season": "Формат под открытую погоду. Проведение планируется в тёплое время года; конкретные даты объявляются отдельно.",
+    "author_route": false,
+    "photo_note": "Кадры с огня и гитар появятся после первого фестиваля."
+  },
+  {
+    "id": 4,
+    "badge": "gastro",
+    "title": "Вкус Башкирии. Гастро-треккинг",
+    "format": "Поход + национальная кухня",
+    "distance": "пешие участки средней протяжённости",
+    "distance_status": "unconfirmed",
+    "duration": "2 дня",
+    "days": "1 ночёвка",
+    "difficulty": "средняя",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Сопровождение гида и организатора гастро-программы",
+      "Полноценное походное питание с элементами башкирской кухни",
+      "Чай на травах и дегустация местных продуктов",
+      "Групповая аптечка и общественное снаряжение по программе"
+    ],
+    "excludes": [
+      "Личные сладости и перекусы сверх программы",
+      "Покупка сувениров и продуктов у местных фермеров",
+      "Аренда личной экипировки"
+    ],
+    "season": "Сезон подбирается так, чтобы продукты были свежими, а маршруты безопасными. Детали обсуждаются при бронировании.",
+    "author_route": false,
+    "photo_note": "После первых гастро-туров добавим фотографии реальных блюд и атмосферы."
+  },
+  {
+    "id": 5,
+    "badge": "hit",
+    "title": "Инзерские Зубчатки: каменная сказка",
+    "format": "Поход выходного дня",
+    "distance": "маршрут с элементами экспедиционного подхода",
+    "distance_status": "unconfirmed",
+    "duration": "2 дня",
+    "days": "1–2 ночёвки",
+    "difficulty": "средняя+",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Сопровождение опытного гида-инструктора",
+      "Маршрутная и навигационная подготовка, план Б на случай изменения погоды",
+      "Чай и горячее питание на костре по программе",
+      "Групповая аптечка и часть общественного снаряжения"
+    ],
+    "excludes": [
+      "Личная экипировка, спальник, коврик и т.п.",
+      "Проезд до точки старта и обратно",
+      "Страховка участника (оформляется самостоятельно или по согласованию)"
+    ],
+    "season": "Поход проводится в сезоны, когда скальные участки безопасны и доступ к хребту открыт. Конкретные сроки обсуждаются индивидуально.",
+    "author_route": true,
+    "note": "Маршрут требует внимательного отношения к высоте и погоде. Обсуждаем опыт участников заранее.",
+    "photo_note": "Панорамы Инзерских Зубчаток появятся после первой вылазки в рамках клуба."
+  },
+  {
+    "id": 6,
+    "badge": "hit",
+    "title": "Айгир на рассвете",
+    "format": "Созерцательный выезд",
+    "distance": "прогулка к смотровым площадкам над скалами",
+    "distance_status": "unconfirmed",
+    "duration": "2 дня",
+    "days": "1 ночёвка",
+    "difficulty": "лёгкая / средняя",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Рассветный выход к смотровой точке (при подходящей погоде)",
+      "Сопровождение гида и подбор темпа под группу",
+      "Чай и лёгкий завтрак на маршруте или в лагере",
+      "Обсуждение фото-точек и помощь в подборе экипировки"
+    ],
+    "excludes": [
+      "Проезд к месту встречи и обратно",
+      "Ночёвка на базе или в палатке (выбор формата и аренда обсуждаются отдельно)",
+      "Личный фотоконтент, услуги фотографа"
+    ],
+    "season": "Выезды планируются в периоды красивых рассветов и безопасной тропы. Точная дата согласуется по прогнозу.",
+    "author_route": true,
+    "photo_note": "Кадры рассвета над скалами Айгира появятся после первого выезда."
+  },
+  {
+    "id": 7,
+    "badge": "hit",
+    "title": "Большой Иремель: к главной вершине",
+    "format": "Поход выходного дня",
+    "distance": "маршрут с заметным набором высоты",
+    "distance_status": "unconfirmed",
+    "duration": "2 дня",
+    "days": "1–2 ночёвки",
+    "difficulty": "средняя / высокая",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Подготовка к восхождению: созвон и рекомендации по форме и экипировке",
+      "Сопровождение гида на всём маршруте",
+      "Горячее питание и чай по программе",
+      "Групповая аптечка и часть общественного снаряжения"
+    ],
+    "excludes": [
+      "Личная экипировка и дополнительные перекусы",
+      "Проезд до точки старта и обратно",
+      "Страхование от несчастных случаев"
+    ],
+    "season": "День восхождения выбирается по погоде и состоянию троп. Возможен перенос в пределах оговорённого периода.",
+    "author_route": true,
+    "photo_note": "Фотографии с вершины Большого Иремеля будут добавлены после первых успешных восхождений в рамках клуба."
+  },
+  {
+    "id": 8,
+    "badge": "gastro",
+    "title": "Капова пещера и бурзянский мёд",
+    "format": "Путешествие с дегустациями",
+    "distance": "минимальная пешеходная нагрузка",
+    "distance_status": "unconfirmed",
+    "duration": "2 дня",
+    "days": "1 ночёвка",
+    "difficulty": "минимальная нагрузка",
+    "price_from": null,
+    "price_status": "unconfirmed",
+    "includes": [
+      "Организация поездки к Каповой пещере и в бурзянский район",
+      "Сопровождение гида и рассказ о регионе по пути",
+      "Дегустация мёда и продуктов местных пасек (при согласии участников)",
+      "Согласование времени посещения музея и смотровых площадок"
+    ],
+    "excludes": [
+      "Билеты в музейный комплекс Каповой пещеры",
+      "Покупка мёда и сувениров",
+      "Размещение и питание, если выбирается формат с ночёвкой в гостевом доме"
+    ],
+    "season": "Поездка планируется в периоды устойчивой дороги и доступности музейного комплекса. Даты и наполняемость программы уточняются при бронировании.",
+    "author_route": true,
+    "note": "Доступ в зал с палеолитическими рисунками регулируется государством и может быть ограничен или невозможен для массовых групп. Мы честно рассказываем об актуальном режиме посещения перед поездкой.",
+    "photo_note": "Фотографии района Каповой пещеры и пасек будут добавлены после первых выездов."
+  }
+];
+
+let lastFocusedElement = null;
+
+document.addEventListener("DOMContentLoaded", () => {
+  initMobileNav();
+  initSmoothScroll();
+  initTours();
+  initForms();
+});
+
+/* Навигация */
+
+function initMobileNav() {
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const header = document.querySelector(".site-header");
+  const dropdownButton = document.querySelector(".nav-link--dropdown");
+  const dropdownParent = dropdownButton?.closest(".main-nav__item--dropdown");
+  const dropdown = dropdownParent?.querySelector(".dropdown");
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const expanded = document.body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    });
+  }
+
+  document.addEventListener("click", (e) => {
+    if (!document.body.classList.contains("nav-open")) return;
+    if (header.contains(e.target)) return;
+    document.body.classList.remove("nav-open");
+    toggle?.setAttribute("aria-expanded", "false");
+  });
+
+  if (dropdownButton && dropdown) {
+    dropdownButton.addEventListener("click", () => {
+      const expanded = dropdownButton.getAttribute("aria-expanded") === "true";
+      dropdownButton.setAttribute("aria-expanded", expanded ? "false" : "true");
+      dropdownParent.setAttribute("aria-expanded", expanded ? "false" : "true");
+      dropdown.style.display = expanded ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+      if (dropdown.contains(e.target) || dropdownButton.contains(e.target)) return;
+      dropdownButton.setAttribute("aria-expanded", "false");
+      dropdownParent.setAttribute("aria-expanded", "false");
+      dropdown.style.display = "none";
+    });
+  }
+}
+
+/* Плавный скролл */
+
+function initSmoothScroll() {
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-scroll-to]");
+    if (!trigger) return;
+    const selector = trigger.getAttribute("data-scroll-to");
+    const target = document.querySelector(selector);
+    if (!target) return;
+    e.preventDefault();
+    const headerOffset = document.querySelector(".site-header")?.offsetHeight || 0;
+    const rect = target.getBoundingClientRect();
+    const offsetTop = rect.top + window.scrollY - headerOffset - 12;
+    window.scrollTo({top: offsetTop, behavior: "smooth"});
+    if (document.body.classList.contains("nav-open")) {
+      document.body.classList.remove("nav-open");
+      document.querySelector("[data-menu-toggle]")?.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+/* Туры */
+
+function initTours() {
+  const container = document.getElementById("tours-list");
+  if (!container) return;
+  renderTours(container, TOURS);
+  populateDirectionSelects(TOURS);
+
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tour-card__btn");
+    if (!btn) return;
+    const id = btn.getAttribute("data-tour-id");
+    if (!id) return;
+    openTourModal(id);
+  });
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-prefill-direction]");
+    if (!btn) return;
+    const direction = btn.getAttribute("data-prefill-direction");
+    prefillDirection(direction);
+  });
+}
+
+function renderTours(container, tours) {
+  container.innerHTML = "";
+  if (!tours || !tours.length) {
+    container.innerHTML = "<p>Каталог туров скоро появится.</p>";
+    return;
+  }
+
+  tours.forEach((tour) => {
+    const article = document.createElement("article");
+    article.className = "tour-card";
+
+    const priceLabel =
+      tour.price_status === "confirmed" && typeof tour.price_from === "number"
+        ? `от ${tour.price_from.toLocaleString("ru-RU")} ₽`
+        : "Стоимость по запросу";
+
+    const btnLabel =
+      tour.price_status === "confirmed" ? "Подробнее" : "Уточнить цену";
+
+    const distanceText =
+      tour.distance_status === "unconfirmed" || !tour.distance
+        ? "дистанция уточняется по треку"
+        : tour.distance;
+
+    const metaParts = [];
+    if (tour.format) metaParts.push(tour.format);
+    if (distanceText) metaParts.push(distanceText);
+
+    const badgeLabel = getBadgeLabel(tour.badge);
+
+    article.innerHTML = `
+      <div class="tour-card__image">
+        <div class="photo-placeholder photo-placeholder--tour">
+          <span>${tour.photo_note || "Фото маршрута появится после выезда."}</span>
+        </div>
+        ${tour.badge ? `<span class="badge badge--${tour.badge}">${badgeLabel}</span>` : ""}
+        ${tour.author_route ? `<span class="badge badge--author">Авторский маршрут</span>` : ""}
+      </div>
+      <div class="tour-card__body">
+        <h3 class="tour-card__title">${tour.title}</h3>
+        <p class="tour-card__meta">${metaParts.join(" • ")}</p>
+        <div class="tour-card__specs">
+          <div class="tour-spec">
+            <svg class="icon icon--small" aria-hidden="true"><use href="#mountain"></use></svg>
+            <span>Сложность: ${tour.difficulty || "уточняется"}</span>
+          </div>
+          <div class="tour-spec">
+            <svg class="icon icon--small" aria-hidden="true"><use href="#backpack"></use></svg>
+            <span>Длительность: ${tour.duration || "уточняется"}${tour.days ? " • " + tour.days : ""}</span>
+          </div>
+        </div>
+        <div class="tour-card__footer">
+          <span class="tour-card__price">${priceLabel}</span>
+          <button type="button" class="btn btn-outline tour-card__btn" data-tour-id="${tour.id}">
+            ${btnLabel}
+          </button>
+        </div>
+      </div>
+    `;
+    container.appendChild(article);
+  });
+}
+
+function getBadgeLabel(code) {
+  switch (code) {
+    case "hit": return "Хит";
+    case "newbie": return "Для новичков";
+    case "fest": return "Фестиваль";
+    case "gastro": return "Гастро-треккинг";
+    default: return "";
+  }
+}
+
+function openTourModal(id) {
+  const tour = TOURS.find((t) => String(t.id) === String(id));
+  if (!tour) return;
+  const modal = document.getElementById("tour-modal");
+  if (!modal) return;
+
+  const titleEl = modal.querySelector("#tour-modal-title");
+  const metaEl = modal.querySelector("#tour-modal-meta");
+  const includesEl = modal.querySelector("#tour-modal-includes");
+  const excludesEl = modal.querySelector("#tour-modal-excludes");
+  const seasonEl = modal.querySelector("#tour-modal-season");
+  const noteEl = modal.querySelector("#tour-modal-note");
+  const toFormBtn = modal.querySelector("#tour-modal-to-form");
+
+  titleEl.textContent = tour.title;
+
+  const parts = [];
+  if (tour.format) parts.push(tour.format);
+  if (tour.days) parts.push(tour.days);
+  if (tour.difficulty) parts.push("Сложность: " + tour.difficulty);
+  metaEl.textContent = parts.join(" • ");
+
+  includesEl.innerHTML = "";
+  (tour.includes || []).forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    includesEl.appendChild(li);
+  });
+
+  excludesEl.innerHTML = "";
+  (tour.excludes || []).forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    excludesEl.appendChild(li);
+  });
+
+  seasonEl.textContent = tour.season || "";
+  const notePieces = [];
+  if (tour.note) notePieces.push(tour.note);
+  if (tour.photo_note) notePieces.push(tour.photo_note);
+  noteEl.textContent = notePieces.join(" ");
+
+  toFormBtn.textContent =
+    tour.price_status === "unconfirmed" ? "Уточнить цену и детали" : "Оставить заявку";
+
+  toFormBtn.onclick = () => {
+    closeModal(modal);
+    prefillDirection(tour.title);
+    scrollToForm();
+  };
+
+  lastFocusedElement = document.activeElement;
+  modal.classList.add("modal--open");
+  modal.setAttribute("aria-hidden", "false");
+  modal.querySelector(".modal__dialog").focus?.();
+
+  modal.addEventListener("click", modalClickHandler);
+  document.addEventListener("keydown", escHandler);
+}
+
+function modalClickHandler(e) {
+  if (e.target.matches("[data-modal-close]") || e.target.classList.contains("modal__overlay")) {
+    const modal = document.getElementById("tour-modal");
+    closeModal(modal);
+  }
+}
+
+function escHandler(e) {
+  if (e.key === "Escape") {
+    const modal = document.getElementById("tour-modal");
+    if (modal && modal.classList.contains("modal--open")) closeModal(modal);
+  }
+}
+
+function closeModal(modal) {
+  if (!modal) return;
+  modal.classList.remove("modal--open");
+  modal.setAttribute("aria-hidden", "true");
+  modal.removeEventListener("click", modalClickHandler);
+  document.removeEventListener("keydown", escHandler);
+  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();
+}
+
+/* Направления в select */
+
+function populateDirectionSelects(tours) {
+  const selects = document.querySelectorAll("select[data-direction-select]");
+  if (!selects.length || !tours || !tours.length) return;
+  selects.forEach((select) => {
+    tours.forEach((tour) => {
+      const option = document.createElement("option");
+      option.value = tour.title;
+      option.textContent = tour.title;
+      select.appendChild(option);
+    });
+  });
+}
+
+function prefillDirection(direction) {
+  if (!direction) return;
+  const selects = document.querySelectorAll("select[data-direction-select]");
+  selects.forEach((select) => {
+    const options = Array.from(select.options);
+    const found = options.find((o) => o.value === direction);
+    if (found) select.value = direction;
+  });
+}
+
+function scrollToForm() {
+  const target = document.getElementById("request");
+  if (!target) return;
+  const headerOffset = document.querySelector(".site-header")?.offsetHeight || 0;
+  const rect = target.getBoundingClientRect();
+  const offsetTop = rect.top + window.scrollY - headerOffset - 12;
+  window.scrollTo({top: offsetTop, behavior: "smooth"});
+  const nameInput = document.getElementById("req-name");
+  if (nameInput) setTimeout(() => nameInput.focus(), 400);
+}
+
+/* Формы */
+
+function initForms() {
+  const requestForm = document.getElementById("request-form");
+  const waitForm = document.getElementById("waitlist-form");
+
+  if (requestForm) {
+    requestForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      handleRequestFormSubmit(requestForm);
+    });
+  }
+  if (waitForm) {
+    waitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      handleWaitlistFormSubmit(waitForm);
+    });
+  }
+}
+
+function validateContact(value) {
+  const v = value.trim();
+  if (!v) return false;
+  const phoneRe = /^[+\d\s().-]{6,}$/;
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return phoneRe.test(v) || emailRe.test(v);
+}
+
+function handleRequestFormSubmit(form) {
+  const nameInput = form.querySelector("#req-name");
+  const contactInput = form.querySelector("#req-contact");
+  const consentInput = form.querySelector("#req-consent");
+  const statusEl = form.querySelector("#request-status");
+  const errors = {name:"",contact:"",consent:""};
+
+  if (!nameInput.value.trim()) errors.name = "Пожалуйста, укажите имя.";
+  if (!validateContact(contactInput.value)) errors.contact = "Укажите телефон или e-mail в понятном формате.";
+  if (!consentInput.checked) errors.consent = "Для отправки заявки требуется согласие на обработку данных.";
+
+  form.querySelector("#req-name-error").textContent = errors.name;
+  form.querySelector("#req-contact-error").textContent = errors.contact;
+  form.querySelector("#req-consent-error").textContent = errors.consent;
+
+  if (errors.name || errors.contact || errors.consent) {
+    statusEl.textContent = "";
+    return;
+  }
+
+  const payload = {
+    name: nameInput.value.trim(),
+    contact: contactInput.value.trim(),
+    direction: form.querySelector("#req-direction")?.value || "",
+    people: form.querySelector("#req-people")?.value || "",
+    dates: form.querySelector("#req-dates")?.value || "",
+    comment: form.querySelector("#req-comment")?.value || "",
+    form: "request"
+  };
+
+  if (!REQUEST_FORM_ENDPOINT) {
+    statusEl.textContent = "Онлайн-форма ещё не подключена. Заявка не отправлена — пожалуйста, свяжитесь с нами в мессенджере или по телефону.";
+    return;
+  }
+
+  statusEl.textContent = "Отправляем заявку…";
+
+  fetch(REQUEST_FORM_ENDPOINT, {
+    method: "POST",
+    headers: {"Content-Type": "application/json","Accept": "application/json"},
+    body: JSON.stringify(payload)
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Network error");
+      form.reset();
+      statusEl.textContent = "Заявка отправлена. Мы свяжемся с вами, как только обработаем сообщение.";
+    })
+    .catch((err) => {
+      console.error("Ошибка отправки заявки:", err);
+      statusEl.textContent = "Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в мессенджер.";
+    });
+}
+
+function handleWaitlistFormSubmit(form) {
+  const nameInput = form.querySelector("#wait-name");
+  const contactInput = form.querySelector("#wait-contact");
+  const consentInput = form.querySelector("#wait-consent");
+  const statusEl = form.querySelector("#wait-status");
+  const errors = {name:"",contact:"",consent:""};
+
+  if (!nameInput.value.trim()) errors.name = "Пожалуйста, укажите имя.";
+  if (!validateContact(contactInput.value)) errors.contact = "Укажите телефон или e-mail в понятном формате.";
+  if (!consentInput.checked) errors.consent = "Для отправки формы требуется согласие на обработку данных.";
+
+  form.querySelector("#wait-name-error").textContent = errors.name;
+  form.querySelector("#wait-contact-error").textContent = errors.contact;
+  form.querySelector("#wait-consent-error").textContent = errors.consent;
+
+  if (errors.name || errors.contact || errors.consent) {
+    statusEl.textContent = "";
+    return;
+  }
+
+  const payload = {
+    name: nameInput.value.trim(),
+    contact: contactInput.value.trim(),
+    direction: form.querySelector("#wait-direction")?.value || "",
+    comment: form.querySelector("#wait-comment")?.value || "",
+    form: "waitlist"
+  };
+
+  if (!WAITLIST_FORM_ENDPOINT) {
+    statusEl.textContent = "Онлайн-форма для листа ожидания ещё не подключена. Сообщите нам о желании участвовать через основную заявку или мессенджеры.";
+    return;
+  }
+
+  statusEl.textContent = "Отправляем форму…";
+
+  fetch(WAITLIST_FORM_ENDPOINT, {
+    method: "POST",
+    headers: {"Content-Type": "application/json","Accept": "application/json"},
+    body: JSON.stringify(payload)
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Network error");
+      form.reset();
+      statusEl.textContent = "Мы получили вашу заявку на ближайшие выезды и сообщим о расписании, как только оно появится.";
+    })
+    .catch((err) => {
+      console.error("Ошибка отправки вейтлиста:", err);
+      statusEl.textContent = "Не удалось отправить форму. Попробуйте ещё раз или напишите нам в мессенджер.";
+    });
+}
+</script>
+</body>
+</html>
